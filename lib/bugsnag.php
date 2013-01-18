@@ -435,7 +435,7 @@ class Bugsnag {
             $requestData['request']['params'] = $_POST;
         }
         $requestData['request']['ip'] = self::getRequestIp();
-        $requestData['request']['userAgent'] = $_SERVER['HTTP_USER_AGENT'];
+        $requestData['request']['userAgent'] = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 
         // Session Tab
         if(!empty($_SESSION)) {
